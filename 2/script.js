@@ -22,29 +22,73 @@
 //
 //var i;
 //var fib = []; // Initialize array!
+//var sum = 0;
 //
 //fib[0] = 0;
 //fib[1] = 1;
-//for(i=2; i<=10; i++) {
+//for(i=2; i<=1000; i++) {
 //    
 //    // Next fibonacci number = previous + one before previous
 //    // Translated to JavaScript:
 //    fib[i] = fib[i-2] + fib[i-1];
+//    if (fib[i] % 2 == 0 ) {
+//        sum += fib[i];
+//        console.log("Sum is " + sum);
+//    }
 //    console.log(fib[i]);
+//    var fibSum = fib.reduce((a, b) => a + b, 0);
+//    console.log("fibSum is " + fibSum);
+//    if ( fibSum > 4000000) {
+//        break;
+//    }
 //}
-fib = function(numMax){
-    for(var fibArray = [0,1], i=0,j=1,k=0; k<=numMax;i=j,j=x,k++ ){
-        x=i+j;
-        if ( x%2 == 0) {
-            fibArray.push(x);
-        }
-    }
-    console.log(fibArray);
-    var sum = fibArray.reduce((a, b) => a + b, 0);
-    console.log(sum);
-}
+//console.log(fib);
 
-fib(40)
+
+
+function EvenFibonacciNumbers(){
+            var value = 4000000;
+            var sum = 0;
+            var temp = 0;
+            var num2 = 1;
+            var num1 = 1;
+
+            while( num2 < value ) {
+                temp = num1 + num2;
+                num1 = num2;
+                num2 = temp;
+                if ( num2 % 2 == 0 ) {
+                    sum += num2;
+                }
+            }
+
+            //document.getElementById("output").value=sum;
+            alert("result ="+sum);
+        }
+EvenFibonacciNumbers();
+
+
+
+//var total = 0;
+//fib = function(numMax){
+//    for(var fibArray = [0,1], i=0,j=1,k=0; k<=numMax;i=j,j=x,k++ ){
+//        x=i+j;
+//        console.log(x);
+//        if ( j > 4000000) {
+//            return
+//        }
+//        if ( x%2 == 0) {
+//            fibArray.push(x);
+//            total += x;
+//            console.log(total);
+//        }
+//    }
+//    console.log(fibArray);
+//    var sum = fibArray.reduce((a, b) => a + b, 0);
+//    console.log(sum);
+//}
+//
+//fib(310)
 
 
 
