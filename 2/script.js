@@ -1,4 +1,4 @@
-function EvenFibonacciNumbers(){
+function evenFibNumbers(){
             var value = 4000000;
             var sum = 0;
             var temp = 0;
@@ -17,4 +17,23 @@ function EvenFibonacciNumbers(){
             //document.getElementById("output").value=sum;
             alert("result ="+sum);
         }
-EvenFibonacciNumbers();
+evenFibNumbers();
+
+
+/*
+// solution finded on internet:
+var sumEvenFibonacci = function() {
+
+	var result = 0
+	var max = 4000000
+
+	for (var i = 1, j = 2, t = 0; i <= max ; t=i, i=j, j+=t) {
+    
+		if (i%2 == 0) {
+			result += i
+		}
+	}
+    alert(result);
+}
+sumEvenFibonacci();
+*/
