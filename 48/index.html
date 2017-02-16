@@ -11,12 +11,30 @@
     <p>Take a look at console.</p>
     
     <script>
-        var total = 0;
-        for (var i = 1; i < 11; i++) {
-        //    debugger;
-            total += Math.pow(i, i);
-        };
-        console.log(total);
+//        var total = 0;
+//        for (var i = 1; i < 11; i++) {
+//        //    debugger;
+//            total += Math.pow(i, i);
+//        };
+//        console.log(total);
+//    I googled and it turns out there is a lack of performance in JavaScript language.
+        
+        
+//    I have found this code working with modulo:
+        var result = 0;
+        var modulo = 10000000000;
+
+        for (var i = 1; i < 1001; i++) {
+            var temp = i;
+            for (var j = 1; j < i; j++) {
+                temp *= i;
+                temp %= modulo;
+            }
+ 
+            result += temp;
+            result %= modulo;
+        }
+        console.log(result);
     </script>
 </body>
 </html>
